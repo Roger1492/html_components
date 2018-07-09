@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tab v3</title>
+    <style>
+        #wrap{
+            position: relative;
+            margin: 100px auto;
+            width: 450px;
+            height: 400px;
+            background: white;
+        }
+        section{
+            position: relative;
+            width: 450px;
+            height: 50px;
+        }
+        span{
+            float: left;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+        }
+        span:nth-of-type(1){background: lightsalmon;}
+        span:nth-of-type(2){background: lightpink;}
+        span:nth-of-type(3){background: lightcyan;}
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 450px;
+            height: 350px;
+            background: rgb(240, 236, 236);
+        }
+        li{
+            position: absolute;
+            width: 450px;
+            height: 350px;
+            line-height: 350px;
+            text-align: center;
+        }
+        li:not(:first-child){
+            display: none;
+        }
+        i{
+            display: inline-block;
+            margin: 20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .3s ease-out;
+        }
+        i:nth-of-type(1){background: lightblue;}
+        i:nth-of-type(2){background: lightcoral;}
+        i:nth-of-type(3){background: lightgreen;}
+        i:nth-of-type(4){background: lightseagreen}
+        i:hover{
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <section>
+            <span>Color</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+        </section>
+        <ul>
+            <li data-name="Color">
+                <i class="lightblue"></i>
+                <i class="lightcoral"></i>
+                <i class="lightgreen"></i>
+                <i class="lightseagreen"></i>
+            </li>
+            <li data-name="JavaScript">This is JavaScript</li>
+            <li data-name="Python">This is Python</li>
+        </ul>
+    </div>
+    <script>
+        let span = Array.from(document.getElementsByTagName("span"));
+        let li = Array.from(document.getElementsByTagName("li"));
+        let color = Array.from(document.getElementsByTagName("i"));
+
+        span.forEach(function(element,index, array){
+            element.addEventListener("click", function(e){
+
+                li.forEach(function(ele, index, array){
+                    ele.style.display = "none";
+                })
+
+                let that = document.querySelector(`li[data-name="${this.textContent}"]`);
+                that.style.display = "block";
+            }, false);
+        })
+
+        color.forEach(function(element, index, array){
+            element.addEventListener("click", function(e){
+                document.body.style.background = this.className;
+            }, false);
+        })
+    </script>
+</body>
+</html>

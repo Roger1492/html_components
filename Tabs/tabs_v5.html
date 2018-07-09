@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tab v5</title>
+    <style>
+        #wrap{
+            position: relative;
+            width: 640px;
+            height: 500px;
+        }
+        section{
+            width: 640px;
+            height: 40px;
+        }
+        span{
+            float: left;
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+        span:hover{
+            background: lightblue;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            position: absolute;
+            width: 640px;
+            height: 460px;
+            line-height: 460px;
+            text-align: center;
+            font-size: 40px;
+        }
+        li:not(:first-child){
+            display: none;
+        }
+        i{
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            width: 80px;
+            height: 2px;
+            /* z-index: -999; */
+        }
+        i:hover{
+            height: 40px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <section>
+            <span>Javascript</span>
+            <span>Python</span>
+            <span>Ruby</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Perl</span>
+            <span>PHP</span>
+            <span>Typescript</span>
+        </section>
+        <i></i>
+        <ul>
+            <li data-name="Javascript">This is Javascript</li>
+            <li data-name="Python">This is Python</li>
+            <li data-name="Ruby">This is Ruby</li>
+            <li data-name="HTML">This is HTML</li>
+            <li data-name="CSS">This is CSS</li>
+            <li data-name="Perl">This is Perl</li>
+            <li data-name="PHP">This is PHP</li>
+            <li data-name="Typescript">This is Typescript</li>
+        </ul>
+    </div>
+    <script>
+        let span = Array.from(document.getElementsByTagName("span"));
+        let li = Array.from(document.getElementsByTagName("li"));
+        let underline = document.getElementsByTagName("i")[0];
+
+        span.forEach(function(element, index, array){
+            element.addEventListener("mouseenter", function(e){
+
+                // underline.style.height = "40px";
+                // underline.style.left = this.offsetLeft + "px";
+
+                li.forEach(function(ele, index, array){
+                    ele.style.display = "none";
+                })
+
+                let that = document.querySelector(`li[data-name="${this.textContent}"]`);
+                that.style.display = "block";
+            }, false);
+        })
+    </script>
+</body>
+
+</html>
