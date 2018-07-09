@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabs v1</title>
+    <style>
+        html,body{
+            font-family: "Microsoft Yahei";
+        }
+        #wrap{
+            margin: 100px auto;
+            width: 800px;
+        }
+        section{
+            position: relative;
+            width: 800px;
+            height: 50px;
+        }
+        span{
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            transition: all .2s ease-out;
+        }
+        span:hover{
+            color: rgb(241, 236, 236);
+        }
+
+        span:nth-of-type(1){background: lightblue;}
+        span:nth-of-type(2){background: lightcoral;}
+        span:nth-of-type(3){background: lightgray;}
+        span:nth-of-type(4){background: lightgreen;}
+        span:nth-of-type(5){background: lightsalmon;}
+        span:nth-of-type(6){background: lightseagreen;}
+        span:nth-of-type(7){background: lightpink;}
+        span:nth-of-type(8){background: lightskyblue;}
+
+        ul{
+            list-style-type: none;
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            position: absolute;
+            width: 800px;
+            height: 500px;
+            line-height: 500px;
+            font-size: 30px;
+            font-weight: 800;
+            text-align: center;
+            background: rgb(108, 192, 188);
+        }
+        li:not(:first-child){
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <section>
+            <span>Java</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>Ruby</span>
+            <span>Cpp</span>
+            <span>PHP</span>
+        </section>
+        <ul>
+            <li data-name="Java">This is Java</li>
+            <li data-name="HTML">This is HTML</li>
+            <li data-name="CSS">This is CSS</li>
+            <li data-name="JavaScript">This is JavaScript</li>
+            <li data-name="Python">This is Python</li>
+            <li data-name="Ruby">This is Ruby</li>
+            <li data-name="Cpp">This is Cpp</li>
+            <li data-name="PHP">This is PHP</li>
+        </ul>
+    </div>
+    <script>
+        let span = Array.from(document.getElementsByTagName("span"));
+        let li = document.getElementsByTagName("li");
+        
+        span.forEach(function(element, index, array){
+            element.addEventListener("mouseenter", function(e){
+
+                // 先把所有的li元素隐藏起来
+                for(let i = 0; i < li.length; i++){
+                    li[i].style.display = "none";
+                }
+                
+                // 在把需要显示的元素显示出来
+                let that = document.querySelector(`li[data-name="${this.textContent}"]`)
+                that.style.display = "block";
+            }, false);
+        })
+    </script>
+</body>
+</html>
