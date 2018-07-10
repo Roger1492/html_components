@@ -1,0 +1,262 @@
+html,body{
+    font-family: "Microsoft Yahei";
+}
+#wrap{
+    position: relative;
+}
+.btn{
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    outline: none;
+    border: none;
+    margin: 40px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid lightgray;
+}
+
+/* Fall */
+.btn-fall::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 60px;
+    z-index: -9;
+    background: lightblue;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition: all .3s;
+
+}
+.btn-fall:hover::before{
+    transform: scaleY(1);
+}
+
+/* Rise */
+.btn-rise::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 60px;
+    z-index: -9;
+    background: lightblue;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition: all .3s;
+}
+.btn-rise:hover::before{
+    transform: scale(1);
+}
+
+/* Forward */
+.btn-forward::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 60px;
+    z-index: -9;
+    background: lightblue;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: all .3s;
+}
+.btn-forward:hover::before{
+    transform: scaleX(1);
+}
+
+/* Backward */
+.btn-backward::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 60px;
+    z-index: -9;
+    background: lightblue;
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    transition: all .3s;
+}
+.btn-backward:hover::before{
+    transform: scaleX(1);
+}
+
+/* Line Top */
+.btn-line-top::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 5px;
+    z-index: -9;
+    background: lightblue;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: all .3s;
+}
+.btn-line-top:hover::before{
+    transform: scaleX(1);
+}
+
+/* Line Bottom */
+.btn-line-bottom::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 5px;
+    z-index: -9;
+    background: lightblue;
+    transform: scaleX(0);
+    transform-origin: 0 100%;
+    transition: all .3s;
+}
+.btn-line-bottom:hover::before{
+    transform: scaleX(1);
+}
+
+/* Top Bottom */
+.btn-top-bottom::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 0;
+    background: lightblue;
+    z-index: -9;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition: all .3s;
+}
+.btn-top-bottom::after{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 0;
+    background: lightblue;
+    z-index: -9;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition: all .3s;
+}
+.btn-top-bottom:hover::before{
+    transform: scaleY(.5);
+}
+.btn-top-bottom:hover::after{
+    transform: scaleY(.5);
+}
+
+/* Left Right */
+.btn-left-right::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 0;
+    background: lightblue;
+    z-index: -9;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: all .3s;
+}
+.btn-left-right::after{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 0;
+    background: lightblue;
+    z-index: -9;
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    transition: all .3s;    
+}
+.btn-left-right:hover::before{
+    transform: scaleX(.5);
+}
+.btn-left-right:hover::after{
+    transform: scaleX(.5);
+}
+
+/* Middle To Top and Bottom */
+.btn-middle-to-top-bottom::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 0;
+    z-index: -9;
+    background: lightblue;
+    transform: scaleY(0);
+    transform-origin: 50% 50%;
+    transition: all .3s;
+}
+.btn-middle-to-top-bottom:hover::before{
+    transform: scaleY(1);
+}
+
+/* Middle To Left Right */
+.btn-middle-to-left-right::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 0;
+    z-index: -9;
+    background: lightblue;
+    transform: scaleX(0);
+    transform-origin: 50% 50%;
+    transition: all .3s;
+}
+.btn-middle-to-left-right:hover::before{
+    transform: scaleX(1);
+}
+
+/* Rectangle */
+.btn-rectangle::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    z-index: -9;
+    left: 0;
+    background: lightblue;
+    transform: scale(0);
+    transform-origin: 50% 50%;
+    transition: all .3s;
+}
+.btn-rectangle:hover::before{
+    transform: scale(1);
+}
+
+/* Loop Fade */
+.btn-loop-fade:hover{
+    animation: loopFade 2s infinite linear;
+}
+@keyframes loopFade{
+    50% {opacity: .1;}
+}
+
+/* Loop Radius */
+.btn-loop-radius:hover{
+    animation: loopRadius 2s infinite linear;
+}
+@keyframes loopRadius{
+    50% {border-radius: 50%;}
+}
+
+/* Shake Left */

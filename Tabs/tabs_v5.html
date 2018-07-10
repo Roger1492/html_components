@@ -17,6 +17,7 @@
             height: 40px;
         }
         span{
+            position: relative;
             float: left;
             width: 80px;
             height: 40px;
@@ -24,8 +25,19 @@
             text-align: center;
             cursor: pointer;
         }
-        span:hover{
-            background: lightblue;
+        span::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 80px;
+            height: 40px;
+            background: rgba(149, 169, 175, 0.582);
+            transform: scaleY(0);
+            transform-origin: 50% 0;
+            transition: all .3s;
+        }
+        span:hover::before{
+            transform: scaleY(1);
         }
         ul{
             list-style-type: none;
@@ -43,18 +55,19 @@
         li:not(:first-child){
             display: none;
         }
-        i{
+        /* i{
             position: absolute;
             display: inline-block;
             top: 0;
             width: 80px;
-            height: 2px;
-            /* z-index: -999; */
+            height: 40px;
+            z-index: -999;
+            background: red;
+            transform: scaleY(0);
         }
         i:hover{
-            height: 40px;
-            background: red;
-        }
+            transform: scaleY(1);
+        } */
     </style>
 </head>
 
@@ -70,7 +83,7 @@
             <span>PHP</span>
             <span>Typescript</span>
         </section>
-        <i></i>
+        <!-- <i></i> -->
         <ul>
             <li data-name="Javascript">This is Javascript</li>
             <li data-name="Python">This is Python</li>
