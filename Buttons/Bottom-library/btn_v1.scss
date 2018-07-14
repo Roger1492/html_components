@@ -1,3 +1,17 @@
+$lightblue: lightblue;
+
+@mixin common-base {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 60px;
+    z-index: -9;
+    background: $lightblue;
+    transition: all .3s;
+}
+
 html,body{
     font-family: "Microsoft Yahei";
 }
@@ -21,17 +35,9 @@ html,body{
 
 /* Fall */
 .btn-fall::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 60px;
-    z-index: -9;
-    background: lightblue;
+    @include common-base;
     transform: scaleY(0);
     transform-origin: 50% 0;
-    transition: all .3s;
 
 }
 .btn-fall:hover::before{
@@ -40,17 +46,9 @@ html,body{
 
 /* Rise */
 .btn-rise::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 60px;
-    z-index: -9;
-    background: lightblue;
+    @include common-base;
     transform: scaleY(0);
     transform-origin: 50% 100%;
-    transition: all .3s;
 }
 .btn-rise:hover::before{
     transform: scale(1);
@@ -58,17 +56,9 @@ html,body{
 
 /* Forward */
 .btn-forward::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 60px;
-    z-index: -9;
-    background: lightblue;
+    @include common-base;
     transform: scaleX(0);
     transform-origin: 0 50%;
-    transition: all .3s;
 }
 .btn-forward:hover::before{
     transform: scaleX(1);
@@ -76,17 +66,9 @@ html,body{
 
 /* Backward */
 .btn-backward::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 60px;
-    z-index: -9;
-    background: lightblue;
+    @include common-base;
     transform: scaleX(0);
     transform-origin: 100% 50%;
-    transition: all .3s;
 }
 .btn-backward:hover::before{
     transform: scaleX(1);
@@ -94,17 +76,9 @@ html,body{
 
 /* Line Top */
 .btn-line-top::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 5px;
-    z-index: -9;
-    background: lightblue;
+    @include common-base;
     transform: scaleX(0);
     transform-origin: 0 0;
-    transition: all .3s;
 }
 .btn-line-top:hover::before{
     transform: scaleX(1);
@@ -112,17 +86,9 @@ html,body{
 
 /* Line Bottom */
 .btn-line-bottom::before{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200px;
-    height: 5px;
-    z-index: -9;
-    background: lightblue;
+    @include common-base;
     transform: scaleX(0);
     transform-origin: 0 100%;
-    transition: all .3s;
 }
 .btn-line-bottom:hover::before{
     transform: scaleX(1);
@@ -130,28 +96,14 @@ html,body{
 
 /* Top Bottom */
 .btn-top-bottom::before{
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 60px;
-    left: 0;
-    background: lightblue;
-    z-index: -9;
+    @include common-base;
     transform: scaleY(0);
     transform-origin: 50% 0;
-    transition: all .3s;
 }
 .btn-top-bottom::after{
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 60px;
-    left: 0;
-    background: lightblue;
-    z-index: -9;
+    @include common-base;
     transform: scaleY(0);
     transform-origin: 50% 100%;
-    transition: all .3s;
 }
 .btn-top-bottom:hover::before{
     transform: scaleY(.5);
@@ -162,28 +114,14 @@ html,body{
 
 /* Left Right */
 .btn-left-right::before{
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 60px;
-    left: 0;
-    background: lightblue;
-    z-index: -9;
+    @include common-base;
     transform: scaleX(0);
     transform-origin: 0 50%;
-    transition: all .3s;
 }
 .btn-left-right::after{
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 60px;
-    left: 0;
-    background: lightblue;
-    z-index: -9;
+    @include common-base;
     transform: scaleX(0);
     transform-origin: 100% 50%;
-    transition: all .3s;    
 }
 .btn-left-right:hover::before{
     transform: scaleX(.5);
@@ -194,16 +132,9 @@ html,body{
 
 /* Middle To Top and Bottom */
 .btn-middle-to-top-bottom::before{
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 60px;
-    left: 0;
-    z-index: -9;
-    background: lightblue;
+    @include common-base;
     transform: scaleY(0);
     transform-origin: 50% 50%;
-    transition: all .3s;
 }
 .btn-middle-to-top-bottom:hover::before{
     transform: scaleY(1);
@@ -211,16 +142,9 @@ html,body{
 
 /* Middle To Left Right */
 .btn-middle-to-left-right::before{
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 60px;
-    left: 0;
-    z-index: -9;
-    background: lightblue;
+    @include common-base;
     transform: scaleX(0);
     transform-origin: 50% 50%;
-    transition: all .3s;
 }
 .btn-middle-to-left-right:hover::before{
     transform: scaleX(1);
@@ -228,16 +152,9 @@ html,body{
 
 /* Rectangle */
 .btn-rectangle::before{
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 60px;
-    z-index: -9;
-    left: 0;
-    background: lightblue;
+    @include common-base;
     transform: scale(0);
     transform-origin: 50% 50%;
-    transition: all .3s;
 }
 .btn-rectangle:hover::before{
     transform: scale(1);
@@ -251,12 +168,12 @@ html,body{
     50% {opacity: .1;}
 }
 
-/* Loop Radius */
-.btn-loop-radius:hover{
-    animation: loopRadius 2s infinite linear;
+/* border Radius */
+.btn-border-radius{
+    transition: all .3s;
 }
-@keyframes loopRadius{
-    50% {border-radius: 50%;}
+.btn-border-radius:hover{
+    border-radius: 10px;
 }
 
 /* Shake Left */
