@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D Cube</title>
+    <style>
+        html,body{
+            background: gray;
+        }
+        #mainDiv{
+            width: 400px;
+            height: 400px;
+            perspective: 800px;
+            margin: 200px auto;
+        }
+        #box{
+            width: 400px;
+            transform-style: preserve-3d;
+            animation: rotate 5s infinite linear;
+        }
+        #box div{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+        }
+        #p1{
+            background: rgba(173, 216, 230, 0.719);
+            transform: translateZ(200px);
+        }
+        #p2{
+            transform: translateZ(-200px);
+            background: rgba(36, 85, 190, 0.705);
+        }
+        #p3{
+            transform: rotateY(90deg) translateX(-200px);
+            transform-origin: left;
+            background: rgba(70, 204, 92, 0.705);
+        }
+        #p4{
+            transform: rotateY(-90deg) translateX(200px);
+            transform-origin: right;
+            background: rgba(184, 78, 157, 0.705);
+        }
+        #p5{
+            transform: rotateX(90deg) translateZ(200px);
+            background: rgba(182, 171, 75, 0.705);
+        }
+        #p6{
+            transform: rotateX(-90deg) translateZ(200px);
+            background: rgba(51, 189, 194, 0.705);
+        }
+        img{
+            width: 400px;
+            height: 400px;
+        }
+
+        @keyframes rotate{
+            100%{
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="box">
+            <div id="p1">
+                <img src="http://img1.imgtn.bdimg.com/it/u=93520166,1535255123&fm=27&gp=0.jpg" alt="">
+            </div>
+            <div id="p2">
+                <img src="http://img2.imgtn.bdimg.com/it/u=3203805412,4179644444&fm=27&gp=0.jpg" alt="">
+            </div>
+            <div id="p3">
+                <img src="http://img4.imgtn.bdimg.com/it/u=3883729263,605988563&fm=27&gp=0.jpg" alt="">
+            </div>
+            <div id="p4">
+                <img src="http://img1.imgtn.bdimg.com/it/u=460969158,2720773441&fm=27&gp=0.jpg" alt="">
+            </div>
+            <div id="p5">
+                <img src="http://img1.imgtn.bdimg.com/it/u=1524864056,3482229297&fm=27&gp=0.jpg" alt="">
+            </div>
+            <div id="p6">
+                <img src="http://img5.imgtn.bdimg.com/it/u=1730464803,1004152958&fm=27&gp=0.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

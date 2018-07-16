@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D Cube</title>
+    <style>
+        #mainDiv{
+            width: 400px;
+            height: 400px;
+            perspective: 800px;
+            margin: 200px auto;
+        }
+        #box{
+            width: 400px;
+            transform-style: preserve-3d;
+            animation: rotate 5s infinite linear;
+        }
+        #box div{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            text-align: center;
+            line-height: 400px;
+        }
+        #p1{
+            background: rgba(173, 216, 230, 0.719);
+            transform: translateZ(200px);
+        }
+        #p2{
+            transform: translateZ(-200px);
+            background: rgba(36, 85, 190, 0.705);
+        }
+        #p3{
+            transform: rotateY(90deg) translateX(-200px);
+            transform-origin: left;
+            background: rgba(70, 204, 92, 0.705);
+        }
+        #p4{
+            transform: rotateY(-90deg) translateX(200px);
+            transform-origin: right;
+            background: rgba(184, 78, 157, 0.705);
+        }
+        #p5{
+            transform: rotateX(90deg) translateZ(200px);
+            background: rgba(182, 171, 75, 0.705);
+        }
+        #p6{
+            transform: rotateX(-90deg) translateZ(200px);
+            background: rgba(51, 189, 194, 0.705);
+        }
+
+        @keyframes rotate{
+            100%{
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="box">
+            <div id="p1">Front</div>
+            <div id="p2">Back</div>
+            <div id="p3">Left</div>
+            <div id="p4">Right</div>
+            <div id="p5">Top</div>
+            <div id="p6">Bottom</div>
+        </div>
+    </div>
+</body>
+</html>

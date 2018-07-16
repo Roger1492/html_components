@@ -177,3 +177,17 @@ html,body{
 }
 
 /* Shake Left */
+
+/* Material Design Green */
+.btn-md-green{
+    background: rgb(127, 240, 127);
+    box-shadow: 0 5px 0 0 gray;
+    transition: all .2s ease-in-out;
+}
+.btn-md-green:hover{
+    background: rgb(155, 247, 155);
+}
+.btn-md-green:active{
+    transform: translateY(5px);
+    box-shadow: 0 1px 0 0;
+}
