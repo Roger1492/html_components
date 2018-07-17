@@ -4,65 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>3D 八面柱体</title>
+    <title>八面体</title>
     <style>
-        html,body{
-            background: lightslategray;
-        }
         #mainDiv{
-            width: 250px;
-            height: 200px;
+            width: 400px;
+            height: 400px;
+            position: relative;
             margin: 200px auto;
+            -webkit-perspective: 800px;
             perspective: 800px;
         }
         #box{
-            width: 249px;
+            width: 400px;
             transform-style: preserve-3d;
-            animation: rotate 16s infinite linear;
+            animation: rotate 10s infinite linear;
+            /* transform: rotateY(105deg); */
         }
         #box div{
             position: absolute;
-            width: 249px;
-            height: 200px;
-            line-height: 200px;
-            text-align: center;
-            font-size: 40px;
-        }
-        #box div:nth-of-type(even){
-            background: lightblue;
-        }
-        #box div:nth-of-type(odd){
-            background: lightcoral;
         }
         .p1{
-            transform: rotateY(0deg) translateZ(300px);
+            width: 0;
+            height: 0;
+            border: 200px solid;
+            border-color: transparent transparent blue transparent;
+            /* transform: translateY(-182px) translateZ(200px); */
+            transform: rotateX(45deg) translateY(-50px) translateZ(126px);
         }
         .p2{
-            transform: rotateY(-45deg) translateZ(300px);
+            width: 0;
+            height: 0;
+            border: 200px solid;
+            border-color: transparent transparent blue transparent;
+            /* transform: translateY(-217px) translateZ(-200px); */
+            transform: rotateX(-45deg) translateY(-68px) translateZ(-156px);
         }
         .p3{
-            transform: rotateY(-90deg) translateZ(300px);
+            width: 0;
+            height: 0;
+            border: 200px solid;
+            border-color: transparent transparent rgba(240, 128, 128, 0.678) transparent;
+            transform: rotateX(-5deg) rotateY(90deg) translateY(-200px) translateZ(200px);
         }
         .p4{
-            transform: rotateY(-135deg) translateZ(300px);
+            width: 0;
+            height: 0;
+            border: 200px solid;
+            border-color: transparent transparent rgba(240, 128, 128, 0.678) transparent;
+            transform: rotateX(-5deg) rotateY(90deg) translateY(-200px) translateZ(-200px);
+        }
+        .p{
+            width: 400px;
+            height: 400px;
+            background: black;
+            transform: rotateX(85deg);
         }
         .p5{
-            transform: rotateY(180deg) translateZ(300px)
+            width: 0;
+            height: 0;
+            border: 200px solid;
+            border-color: rgba(240, 128, 128, 0.678) transparent transparent transparent;
+            transform: translateY(-182px) translateZ(200px);
         }
         .p6{
-            transform: rotateY(135deg) translateZ(300px);
+            width: 0;
+            height: 0;
+            border: 200px solid;
+            border-color: rgba(240, 128, 128, 0.678) transparent transparent transparent;
+            transform: translateY(-217px) translateZ(-200px);
         }
         .p7{
-            transform: rotateY(90deg) translateZ(300px);
+            width: 0;
+            height: 0;
+            border: 200px solid;
+            border-color: lightblue transparent transparent transparent;
+            transform: rotateX(-5deg) rotateY(90deg) translateX(36px) translateY(-198px) translateZ(200px);
         }
         .p8{
-            transform: rotateY(45deg) translateZ(300px);
+            width: 0;
+            height: 0;
+            border: 200px solid;
+            border-color: lightblue transparent transparent transparent;
+            transform: rotateX(-5deg) rotateY(90deg) translateX(36px)  translateY(-200px) translateZ(-200px);
         }
-        img{
-            width: 249px;
-            height: 249px;
-        }
-        
+
         @keyframes rotate{
             100%{
                 transform: rotateY(360deg);
@@ -73,30 +98,15 @@
 <body>
     <div id="mainDiv">
         <div id="box">
-            <div class="p1">
-                <img src="http://old.bz55.com/uploads/allimg/140325/1-140325145I9.jpg" alt="">
-            </div>
-            <div class="p2">
-                <img src="http://img02.tooopen.com/images/20150213/tooopen_sy_80768737123.jpg" alt="">
-            </div>
-            <div class="p3">
-                <img src="http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1212/26/c0/16898998_1356493643557.jpg" alt="">
-            </div>
-            <div class="p4">
-                <img src="http://img.7xz.com/img/picimg/201607/20160729144503_393b546cdc53ca68636.jpg" alt="">
-            </div>
-            <div class="p5">
-                <img src="http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1212/24/c1/16847881_1356331480443.jpg" alt="">
-            </div>
-            <div class="p6">
-                <img src="http://pic1.win4000.com/wallpaper/f/5427b84707a09.jpg" alt="">
-            </div>
-            <div class="p7">
-                <img src="http://uploads.5068.com/allimg/160216/62-160216192223.jpg" alt="">
-            </div>
-            <div class="p8">
-                <img src="http://img05.tooopen.com/images/20150411/tooopen_sy_117934541587.jpg" alt="">
-            </div>
+            <div class="p1"></div>
+            <div class="p2"></div>
+            <div class="p3"></div>
+            <div class="p4"></div>
+            <section class="p"></section>
+            <div class="p5"></div>
+            <div class="p6"></div>
+            <div class="p7"></div>
+            <div class="p8"></div>
         </div>
     </div>
 </body>
