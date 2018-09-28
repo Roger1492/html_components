@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>纯CSS实现分页效果</title>
+</head>
+<style>
+    div {
+        position: relative;
+        width: 600px;
+        height: 100px;
+        background: gray;
+    }
+
+    section {
+        position: relative;
+        font-size: 50px;
+        font-family: 'Microsoft YaHei';
+        float: left;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    section:hover {
+        color: white;
+        cursor: pointer;
+        background: lightgray;
+    }
+
+    span {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: inline-block;
+        width: 100px;
+        height: 5px;
+        background: red;
+        transition: all .1s ease-in;
+    }
+
+    section:nth-of-type(1):hover+*+*+*+*+*+span {
+        left: 0;
+    }
+
+    section:nth-of-type(2):hover+*+*+*+*+span {
+        left: 100px;
+    }
+
+    section:nth-of-type(3):hover+*+*+*+span {
+        left: 200px;
+    }
+
+    section:nth-of-type(4):hover+*+*+span {
+        left: 300px;
+    }
+
+    section:nth-of-type(5):hover+*+span {
+        left: 400px;
+    }
+
+    section:nth-of-type(6):hover+span {
+        left: 500px;
+    }
+</style>
+
+<body>
+    <div>
+        <section>1</section>
+        <section>2</section>
+        <section>3</section>
+        <section>4</section>
+        <section>5</section>
+        <section>6</section>
+        <span></span>
+    </div>
+
+    <!-- 以下是一些解释 -->
+    <hr>
+    <pre><code>
+
+    我们都知道在 CSS 中 <mark>+</mark> 代表兄弟元素。比如，<mark>div + section</mark> 就是选择了 <mark>div</mark> 的兄弟元素 <mark>section</mark>。这个样式是作用在 <mark>section</mark> 上的。
+    那如果 <mark>HTML</mark> 的结构是这样的：
+
+    &lt;div&gt;
+        &lt;section&gt;1&lt;/section&gt;
+        &lt;section&gt;2&lt;/section&gt;
+        &lt;section&gt;3&lt;/section&gt;
+        &lt;section&gt;4&lt;/section&gt;
+        &lt;section&gt;5&lt;/section&gt;
+        &lt;span&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    我们有一行这样子的代码 <mark>section:nth-of-type(5):hover + span</mark>， 当把光标移动到第五个 <mark>section</mark> 元素上时，就会触发 <mark>span</mark> 元素上的样式。
+    这很好理解，但是如果我把光标放到第四个 <mark>section</mark> 或者第三个 <mark>section</mark>元素上，乃至第一个 <mark>section</mark> 元素上时，我同样想把样式作用在 <mark>span</mark> 上时该怎么做呢？
+    我们不借助 Javascript 来实现它。这是我们就需要一点小技巧了。那就是 <mark>+ *</mark> ，这代表跳过相邻的下一个元素。<mark>+* +*</mark> 这代表跳过后面两个相邻的元素，以此类推。
+    因此，假如我们把光标放到第四个 <mark>section</mark>元素上，但样式作用在 <mark>span</mark> 上，我们可以这么写：<mark>section:nth-of-type(4):hover +* + span</mark>, 跳过第五个 <mark>section</mark>，以此类推，
+    需要跳过几个相邻的兄弟元素就写几个 <mark>+*</mark>。
+
+    </code></pre>
+</body>     
+
+</html>

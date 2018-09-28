@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>有简单JS的实现的分页效果</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            position: relative;
+            width: 600px;
+            height: 100px;
+            background: rgb(204, 202, 202);
+        }
+
+        section {
+            position: relative;
+            float: left;
+            width: 120px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        section:hover {
+            background: lightblue;
+        }
+
+        span {
+            display: inline-block;
+            position: absolute;
+            width: 120px;
+            height: 5px;
+            background: red;
+            left: 0;
+            bottom: 0;
+            transition: all .1s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <section>1</section>
+        <section>2</section>
+        <section>3</section>
+        <section>4</section>
+        <section>5</section>
+        <span></span>
+    </div>
+    <script>
+        let section = Array.from(document.getElementsByTagName("section"));
+        let span = document.getElementsByTagName("span")[0];
+
+        section.forEach(function (ele, ind, arr) {
+            ele.addEventListener("mouseenter", function (e) {
+                span.style.left = e.target.offsetLeft + "px";
+            }, false);
+        })
+    </script>
+</body>
+
+</html>
